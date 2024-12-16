@@ -49,7 +49,7 @@ A FastAPI service that evaluates LLM-generated responses using the Skywork-o1-Op
 - Action-level reinforcement learning
 
 ### API Response Format
-```json
+```python
 {
   "step_rewards": [
     [0.78, 0.70, 0.64, 0.62],  // Scores for each step
