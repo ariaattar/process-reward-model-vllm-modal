@@ -1,4 +1,4 @@
-# Preference Reward Model (PRM) API using vLLM and Modal Labs
+# Preference Reward Model (PRM) API
 
 ## Quick Start
 
@@ -25,8 +25,8 @@ https://your-modal-endpoint.run/score
 A FastAPI service that evaluates LLM-generated responses using the Skywork-o1-Open-PRM-Qwen models. The service scores responses step-by-step, providing quality metrics for each step.
 
 ### Models Available
-- **Default**: Skywork-o1-Open-PRM-Qwen-2.5-1.5B
-- **Alternative**: Skywork-o1-Open-PRM-Qwen-2.5-7B
+- **Default**: [Skywork-o1-Open-PRM-Qwen-2.5-1.5B](https://huggingface.co/Skywork/Skywork-o1-Open-PRM-Qwen-2.5-1.5B)
+- **Alternative**: [Skywork-o1-Open-PRM-Qwen-2.5-7B](https://huggingface.co/Skywork/Skywork-o1-Open-PRM-Qwen-2.5-7B)
 
 ### Key Features
 - Step-by-step solution evaluation
@@ -64,10 +64,6 @@ A FastAPI service that evaluates LLM-generated responses using the Skywork-o1-Op
 - Container idle timeout: 2 minutes
 - Concurrent inputs: 200
 - Persistent volume for model weights
-
-## Resources
-- [1.5B Model](https://huggingface.co/Skywork/Skywork-o1-Open-PRM-Qwen-2.5-1.5B)
-- [7B Model](https://huggingface.co/Skywork/Skywork-o1-Open-PRM-Qwen-2.5-7B)
 
 ## Citation
 ```bibtex
