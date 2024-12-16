@@ -46,11 +46,11 @@ These models are used during training to improve reasoning capabilities of large
 - Action-level reinforcement learning in agents: Enable fine-grained optimization by scoring and reinforcing individual reasoning steps
 
 ### API Response Format
-```json
+```python
 {
   "step_rewards": [
-    [0.78, 0.70, 0.64, 0.62],  // Scores for each step
-    [0.80, 0.78, 0.82, 0.83]   // Multiple responses supported
+    [0.78, 0.70, 0.64, 0.62],  # Scores for each step
+    [0.80, 0.78, 0.82, 0.83]   # Multiple responses supported
   ]
 }
 ```
