@@ -52,8 +52,8 @@ A FastAPI service that evaluates LLM-generated responses using the Skywork-o1-Op
 ```python
 {
   "step_rewards": [
-    [0.78, 0.70, 0.64, 0.62],  // Scores for each step
-    [0.80, 0.78, 0.82, 0.83]   // Multiple responses supported
+    [0.78, 0.70, 0.64, 0.62],  # Scores for each step
+    [0.80, 0.78, 0.82, 0.83]   # Multiple responses supported
   ]
 }
 ```
