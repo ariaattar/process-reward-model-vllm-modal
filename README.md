@@ -82,6 +82,40 @@ In this example:
 - Uses environment-based configuration
 - Implements proper error handling and validation 
 
+## Deployment
+To deploy the PRM API to Modal, follow these steps:
+
+1. **Install Modal CLI**
+```bash
+pip install modal
+```
+
+2. **Authenticate with Modal**
+```bash
+modal token new
+```
+
+3. **Deploy the Application**
+```bash
+modal deploy prm_reward_modal.py
+```
+
+The deployment process will:
+- Create a new Modal volume for model storage if it doesn't exist
+- Build the container image with all dependencies
+- Download and cache the model weights
+- Start the VLLM server
+- Deploy the FastAPI application
+
+### Deployment Configuration
+The deployment uses the following Modal configurations:
+- GPU: H100 (1 count)
+- Timeout: 6 minutes
+- Container idle timeout: 2 minutes
+- Concurrent inputs: 200
+- Memory snapshot enabled
+- Persistent volume for model weights
+
 ## Citation
 ```bibtex
 @misc{skyworkopeno12024,
