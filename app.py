@@ -10,8 +10,8 @@ import asyncio
 from huggingface_hub import snapshot_download
 import os
 
-app = modal.App("tensorstax-prm-api")
-model_volume = modal.Volume.from_name("tensorstax-model-volume-prm", create_if_missing=True)
+app = modal.App("your-prm-api")
+model_volume = modal.Volume.from_name("your-model-volume-prm", create_if_missing=True)
 
 image = modal.Image.debian_slim().apt_install("git").pip_install(
     "fastapi",
@@ -47,16 +47,12 @@ async def get_api_key(api_key_header: str = Security(api_key_header)):
         )
     return api_key_header
 
-class GenerationRequest(BaseModel):
-    system_prompt: str
-    user_prompt: str
-    temperature: float = 0.1 
-
 class ScoreRequest(BaseModel):
     problems: list[str]
     responses: list[str]
     model_path: str = "Skywork/Skywork-o1-Open-PRM-Qwen-2.5-1.5B"
-  
+
+
 @app.function(
     image=image,
     gpu=modal.gpu.H100(count=1),
@@ -107,9 +103,6 @@ def fastapi_app():
     
     app = FastAPI(title="LLM Generation API")
     
-    @app.post("/generate", dependencies=[Depends(get_api_key)])
-    async def generate_text(request: GenerationRequest):
-        return {"message": "This is a placeholder. Implement your logic here."}
 
     @app.post("/score", dependencies=[Depends(get_api_key)])
     async def score_responses(request: ScoreRequest):
